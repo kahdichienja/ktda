@@ -1,0 +1,49 @@
+{% load static %}
+<div class="navbar-fixed">
+    <nav class="white lighten-5 hoverable navbar-fixed">
+        <div class="nav-wrapper">
+            <a href="#!" style="margin-left: 25px;" id="myToggler" class="left brand-logo grey-text lighten-2">
+                KTDA | Tea
+            </a>
+            <ul class="right">
+                <li>
+                    <a href="{% url 'account:dashboard' %}" class="hide-on-small-only">
+                        <i class="material-icons grey-text lighten-2">apps</i>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'account:logout' %}" class="hide-on-small-only">
+                        <i class="material-icons grey-text lighten-2">visibility_off</i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<div class="container">
+    <ul id="slide-out" class="sidenav">
+        <li>
+            <div class="user-view">
+                <div class="background">
+                    <img src="{% static 'dashboard/img/bg.jpeg' %}">
+                </div>
+                <a href="#user"><img class="circle" src="{{profile.profile.url}}"></a>
+                <a href="#name"><span class="white-text name">{{user.username}}</span></a>
+                <a href="#email"><span class="white-text email">{{user.email}}</span></a>
+            </div>
+        </li>
+        <li>
+            <a class="" href="{% url 'account:dashboard' %}">
+                <i class="material-icons">apps</i> Dashboard
+            </a>
+        </li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a href="{% url 'account:logout' %}"><i class="material-icons text-red">visibility_off</i> logout</a></li>
+
+    </ul>
+    <a href="#" data-target="slide-out" class="sidenav-trigger mt-3 white-text"><i class="material-icons">menu</i></a>
+
+
+
